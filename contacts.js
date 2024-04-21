@@ -1,7 +1,10 @@
 import fs from 'node:fs/promises';
 import { nanoid } from 'nanoid';
+import path from 'node:path';
 
-const contactsPath = new URL('db/contacts.json', import.meta.url);
+const contactsPath = path.join(path.dirname('contacts.js'), 'db/contacts.json');
+// Актуальний синтаксис
+// const contactsPath = new URL('db/contacts.json', import.meta.url);
 
 export async function listContacts() {
     // Returns array of Contacts' objects
